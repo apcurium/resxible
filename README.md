@@ -11,7 +11,7 @@ XYZ is a simple tool to generate automatically **several** platform-dependent re
 ###from the binaries
 * downlaod the latest binaries here and unzip the content into your common project which contains the RESX file
 
-##Resource Generation
+##Resources Generation
 * modify the Generate.sh and/or the Genearte.bat files under the *Localization* folder to target your resx file and the correct path for your iOS and Android projects
 * execute the script
 
@@ -20,18 +20,23 @@ XYZ is a simple tool to generate automatically **several** platform-dependent re
 XYZ.exe [-t] [-a] [-m] [-d] [-b]
 
 Options: 
--t|target : ios or android (required)
--a|amp : common resx file (optional), if you have a resx file containnning default values etc. Those values will be overrided if they exist in the main resx file (see below)
--m|master : main resx file (required)
--d|destination : destination and file name to be genearetd (required)
--b|backup : backup file (optional)
+
+- **-t|target** : ios or android (required)
+- **-a|amp** : common resx file (optional), if you have a resx file containnning default values etc. Those values will be overrided
+if they exist in the main resx file (see below)
+- **-m|master** : main resx file (required)
+- **-d|destination** : destination and file name to be genearetd (required)
+- **-b|backup** : backup file (optional)
 
 Example:
+```Batchfile
+XYZ.exe -t=android -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.Droid\Resources\Values\Strings.xml"
+XYZ.exe -t=ios -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lproj\Localizable.strings"
+```
 
-`XYZ.exe -t=android -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.Droid\Resources\Values\Strings.xml"` 
-`XYZ.exe -t=ios -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lproj\Localizable.strings"`
+##Know limitations and future improvements
 
-##Know limitations
+One 
 
-##But... it doesn't support XZY or it has a bug
+##But... it doesn't support XZY or I found a bug
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
