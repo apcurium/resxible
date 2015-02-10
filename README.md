@@ -9,7 +9,7 @@ XYZ is a simple tool to generate automatically **several** platform-dependent re
 * add the nuget package XYZ to your common project which contains the RESX file
 
 ###from the binaries
-* downlaod the latest binaries here and unzip the content into your common project which contains the RESX file
+* download the latest binaries here and unzip the content into your common project which contains the RESX file
 
 ##Resources Generation
 * modify the Generate.sh and/or the Genearte.bat files under the *Localization* folder to target your resx file and the correct path for your iOS and Android projects
@@ -22,10 +22,9 @@ XYZ.exe [-t] [-a] [-m] [-d] [-b]
 Options: 
 
 - **-t|target** : ios or android (required)
-- **-a|amp** : common resx file (optional), if you have a resx file containnning default values etc. Those values will be overrided
-if they exist in the main resx file (see below)
+- **-a|amp** : common resx file (optional). If you have a resx file containnning default values. Those values will be overrided if they exist in the main resx file (see below)
 - **-m|master** : main resx file (required)
-- **-d|destination** : destination and file name to be genearetd (required)
+- **-d|destination** : destination path and file name to be genearetd (required)
 - **-b|backup** : backup file (optional)
 
 Example:
