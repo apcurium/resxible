@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amp.LocalizationTool", "Amp.LocalizationTool.csproj", "{8CDCCDFE-58B1-4DED-A84F-D601E5C98D4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{F4B89DA1-A19F-4A82-8175-A5A4A83108AD}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec\Amp.Localization.nuspec = nuspec\Amp.Localization.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amp.LocalizationTool", "Amp.LocalizationTool\Amp.LocalizationTool.csproj", "{8CDCCDFE-58B1-4DED-A84F-D601E5C98D4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
