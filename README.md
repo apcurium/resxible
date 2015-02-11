@@ -22,7 +22,7 @@ XYZ.exe [-t] [-a] [-m] [-d] [-b]
 Options: 
 
 - **-t|target** : ios or android (required)
-- **-a|amp** : common resx file (optional). If you have a resx file containnning default values. Those values will be overrided if they exist in the main resx file (see below)
+- **-c|common** : common resx file (optional). If you have a resx file containnning default values for different projects. Those values will be overriden if they exist in the main resx file (see below)
 - **-m|master** : main resx file (required)
 - **-d|destination** : destination path and file name to be genearetd (required)
 - **-b|backup** : backup file (optional)
