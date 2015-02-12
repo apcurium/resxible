@@ -3,6 +3,8 @@
 ##What's XYZ?
 XYZ is a simple tool to generate automatically **several** platform-dependent resource files from a **single** RESX file.
 
+##Overview
+
 ##Installation
 
 ###from the nuget package
@@ -35,9 +37,11 @@ XYZ.exe -t=ios -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lproj\Loc
 
 ##FAQ
 
-Does XYZ support several languages? Do I need to specify each language in the command line arguments?
+- Does XYZ support several languages? Do I need to specify each language in the command line arguments?
 
-What's the common file argument for?
+- What's the common file argument for?
+
+- Where can I find an eample?
 
 ##But... it doesn't support XZY or I found a bug
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
