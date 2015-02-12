@@ -33,9 +33,11 @@ XYZ.exe -t=android -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.Droid\Resour
 XYZ.exe -t=ios -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lproj\Localizable.strings"
 ```
 
-##Know limitations and future improvements
+##FAQ
 
-One 
+Does XYZ support several languages? Do I need to specify each language in the command line arguments?
+
+What's the common file argument for?
 
 ##But... it doesn't support XZY or I found a bug
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
