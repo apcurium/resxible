@@ -29,7 +29,7 @@ namespace Sample.iPhone
             window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             // If you have defined a view, add it here:
-            // window.RootViewController  = navigationController;
+            window.RootViewController  = new HomeViewController();
 
             // make the window visible
             window.MakeKeyAndVisible();
