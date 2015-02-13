@@ -1,14 +1,14 @@
-# XYZ
+# resxible
 
-##What's XYZ?
-XYZ is a simple tool to generate automatically **several** platform-dependent resource files from a **single** RESX file.
+##What's resxible?
+resxible is a simple tool to generate automatically **several** platform-dependent resource files from a **single** RESX file.
 
 ##Overview
 
 ##Installation
 
 ###from the nuget package
-* add the nuget package XYZ to your common project which contains the RESX file
+* add the nuget package resxible to your common project which contains the RESX file
 
 ###from the binaries
 * download the latest binaries here and unzip the content into your common project which contains the RESX file
@@ -31,17 +31,17 @@ Options:
 
 Example:
 ```Batchfile
-XYZ.exe -t=android -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.Droid\Resources\Values\Strings.xml"
-XYZ.exe -t=ios -a="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lproj\Localizable.strings"
+resxible.exe -t=android -c="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.Droid\Resources\Values\Strings.xml"
+resxible.exe -t=ios -c="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lproj\Localizable.strings"
 ```
 
 ##FAQ
 
-- Does XYZ support several languages? Do I need to specify each language in the command line arguments?
+- Does resxible support several languages? Do I need to specify each language in the command line arguments?
 
 - What's the common file argument for?
 
 - Where can I find an eample?
 
-##But... it doesn't support XZY or I found a bug
+##But... it doesn't support resxible or I found a bug
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
