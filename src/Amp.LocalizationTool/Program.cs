@@ -110,14 +110,14 @@ namespace Amp.LocalizationTool
 			}
 		}
 
-		private static void ConvertResourceFile(string ampFile, string masterFile, string target, string destination, bool backup)
+		private static void ConvertResourceFile(string commonFile, string masterFile, string target, string destination, bool backup)
 		{
 			var resourceManager = new ResourceManager();
 			ResourceFileHandlerBase handler;
 
-			if (!string.IsNullOrWhiteSpace (ampFile))
+			if (!string.IsNullOrWhiteSpace (commonFile))
 			{
-				resourceManager.AddSource(new ResxResourceFileHandler(ampFile));
+				resourceManager.AddSource(new ResxResourceFileHandler(commonFile));
 			}
 
 			resourceManager.AddSource(new ResxResourceFileHandler(masterFile));

@@ -7,7 +7,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Amp.LocalizationTool</RootNamespace>
     <AssemblyName>Amp.LocalizationTool</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
@@ -54,13 +54,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Mono.Options\Options.cs" />
-    <Compile Include="Localization\ResourceFileHandler.cs" />
+    <Compile Include="Localization\ResourceFileHandlerBase.cs" />
     <Compile Include="Localization\ResourceManager.cs" />
     <Compile Include="Localization\iOS\iOSResourceFileHandler.cs" />
     <Compile Include="Localization\Android\AndroidResourceFileHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
