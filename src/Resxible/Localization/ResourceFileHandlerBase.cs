@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 
-namespace Amp.LocalizationTool
+namespace Com.Apcurium.Resxible.Localization
 {
 	//Working with .resx Files Programmatically http://msdn.microsoft.com/en-us/library/gg418542.aspx
 	public abstract class ResourceFileHandlerBase : Dictionary<string, string>

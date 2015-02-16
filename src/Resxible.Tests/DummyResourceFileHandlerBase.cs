@@ -1,4 +1,6 @@
-﻿namespace Amp.LocalizationTool.Tests
+﻿using Com.Apcurium.Resxible.Localization;
+
+namespace Com.Apcurium.Resxible.Tests
 {
     class DummyResourceFileHandlerBase : ResourceFileHandlerBase
     {

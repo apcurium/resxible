@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-namespace Amp.LocalizationTool
+namespace Com.Apcurium.Resxible.Localization.Android
 {
 	public class AndroidResourceFileHandler : ResourceFileHandlerBase
 	{

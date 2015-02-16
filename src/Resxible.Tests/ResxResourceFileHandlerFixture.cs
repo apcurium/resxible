@@ -1,6 +1,7 @@
-﻿using NUnit.Framework;
+﻿using Com.Apcurium.Resxible.Localization;
+using NUnit.Framework;
 
-namespace Amp.LocalizationTool.Tests
+namespace Com.Apcurium.Resxible.Tests
 {
     [TestFixture]
     public class ResxResourceFileHandlerFixture

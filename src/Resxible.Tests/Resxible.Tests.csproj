@@ -7,8 +7,8 @@
     <ProjectGuid>{80CC4EDB-2D6C-4D6A-8A13-F4C94507B6EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amp.LocalizationTool.Tests</RootNamespace>
-    <AssemblyName>Amp.LocalizationTool.Tests</AssemblyName>
+    <RootNamespace>Com.Apcurium.Resxible.Tests</RootNamespace>
+    <AssemblyName>Resxible.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Amp.LocalizationTool\Amp.LocalizationTool.csproj">
+    <ProjectReference Include="..\Resxible\Resxible.csproj">
       <Project>{8cdccdfe-58b1-4ded-a84f-d601e5c98d4a}</Project>
-      <Name>Amp.LocalizationTool</Name>
+      <Name>Resxible</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

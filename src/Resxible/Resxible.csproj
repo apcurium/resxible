@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8CDCCDFE-58B1-4DED-A84F-D601E5C98D4A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Amp.LocalizationTool</RootNamespace>
-    <AssemblyName>Amp.LocalizationTool</AssemblyName>
+    <RootNamespace>Com.Apcurium.Resxible</RootNamespace>
+    <AssemblyName>Resxible</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -28,7 +28,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Amp.LocalizationTool.Program</StartupObject>
+    <StartupObject>Com.Apcurium.Resxible.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <OutputPath>bin\Debug\</OutputPath>

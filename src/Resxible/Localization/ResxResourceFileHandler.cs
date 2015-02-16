@@ -1,10 +1,10 @@
-﻿using System.Resources;
-using System.Collections;
+﻿using System.Collections;
 using System.ComponentModel.Design;
 using System.IO;
+using System.Resources;
 using System.Text;
 
-namespace Amp.LocalizationTool
+namespace Com.Apcurium.Resxible.Localization
 {
 	public class ResxResourceFileHandler : ResourceFileHandlerBase
 	{

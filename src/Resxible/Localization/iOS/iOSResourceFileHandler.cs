@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Amp.LocalizationTool
+namespace Com.Apcurium.Resxible.Localization.iOS
 {
 	public class iOSResourceFileHandler : ResourceFileHandlerBase
 	{

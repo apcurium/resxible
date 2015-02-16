@@ -1,7 +1,8 @@
 ﻿using System.IO;
+using Amp.LocalizationTool.Tests;
 using NUnit.Framework;
 
-namespace Amp.LocalizationTool.Tests
+namespace Com.Apcurium.Resxible.Tests
 {
     [TestFixture]
     public class ResourceFileHandlerBaseFixture

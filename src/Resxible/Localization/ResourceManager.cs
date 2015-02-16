@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Amp.LocalizationTool
+namespace Com.Apcurium.Resxible.Localization
 {
 	public class ResourceManager
 	{
