@@ -43,18 +43,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DummyResourceFileHandlerBase.cs" />
+    <Compile Include="Localization\Platforms\AndroidResourceFileHandlerFixture.cs" />
+    <Compile Include="Localization\Platforms\iOSResourceFileHandlerFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResourceFileHandlerBaseFixture.cs" />
-    <Compile Include="ResourceManagerFixture.cs" />
+    <Compile Include="Localization\ResourceFileHandlerBaseFixture.cs" />
+    <Compile Include="Localization\ResourceManagerFixture.cs" />
     <Compile Include="ResxFileHandlerResourceTestData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResxFileHandlerResourceTestData.resx</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ResxResourceFileHandlerFixture.cs" />
+    <Compile Include="Localization\Platforms\ResxResourceFileHandlerFixture.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Localizable.strings">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +75,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Strings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

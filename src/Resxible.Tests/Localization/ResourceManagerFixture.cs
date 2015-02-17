@@ -2,7 +2,7 @@
 using Com.Apcurium.Resxible.Localization;
 using NUnit.Framework;
 
-namespace Com.Apcurium.Resxible.Tests
+namespace Com.Apcurium.Resxible.Tests.Localization
 {
     [TestFixture]
     public class ResourceManagerFixture
