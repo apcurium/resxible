@@ -13,11 +13,12 @@
 	<files>		
 
 		<!-- tools -->
-		<file src="..\Resxible\GenerateResources.sh" target="content\Localization\" />
-		<file src="..\Resxible\GenerateResources.bat" target="content\Localization\" />
+		<file src="..\GenerateResources.sh" target="content\Localization\" />
+		<file src="..\GenerateResources.bat" target="content\Localization\" />
 
 
-		<file src="..\Resxible\bin\Release\Amp.LocalizationTool.exe" target="content\Localization\" />
+		<file src="..\Resxible\bin\Release\Resxible.exe" target="content\Localization\" />
+    <file src="..\Resxible\bin\Release\Resxible.pdb" target="content\Localization\" />
 		<file src="..\Resxible\*.resx" target="content\Localization\" />
 
 	</files>
