@@ -91,5 +91,17 @@ namespace Com.Apcurium.Resxible.Tests.Localization
         }
 
 
+        [Test]
+        public void Add_KeyValues_SortedByKeys()
+        {
+            var sut = new DummyResourceFileHandlerBase(_myfileTxt);
+
+            sut["b"] = "value";
+            sut["a"] = "value";
+           
+            Assert.That(sut.ToArray()[0].Key, Is.EqualTo("a"));
+        }
+
+
     }
 }

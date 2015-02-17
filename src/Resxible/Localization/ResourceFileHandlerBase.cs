@@ -7,7 +7,7 @@ using System.Linq;
 namespace Com.Apcurium.Resxible.Localization
 {
 	//Working with .resx Files Programmatically http://msdn.microsoft.com/en-us/library/gg418542.aspx
-	public abstract class ResourceFileHandlerBase : Dictionary<string, string>
+	public abstract class ResourceFileHandlerBase : SortedDictionary<string, string>
 	{
 		private readonly string _filePath;
 		private readonly HashSet<string> _duplicateKeys;
