@@ -58,10 +58,9 @@ namespace Com.Apcurium.Resxible.Localization
 
 			if (backupOldFile)
 			{
-                var resourceFileHandler = (ResourceFileHandlerBase)Activator.CreateInstance(GetType(), _filePath);
-				backupFilePath = GetBackupFilePath();
+                backupFilePath = GetBackupFilePath();
 
-				File.WriteAllText(backupFilePath, resourceFileHandler.GetFileText());
+                File.Copy(_filePath, backupFilePath);
 			}
 
 			File.WriteAllText(_filePath, GetFileText());
@@ -73,8 +72,9 @@ namespace Com.Apcurium.Resxible.Localization
 
 	    private string GetBackupFilePath()
 		{
-			return string.Format("{3}\\{0}-{1:yyyy-MM-dd_hh-mm-ss-tt}{2}",
-				Path.GetFileNameWithoutExtension(_filePath), DateTime.Now,
+            return string.Format("{3}\\{0}-{1:yyyy-MM-dd_hh-mm-ss-FFFFFF}{2}",
+				Path.GetFileNameWithoutExtension(_filePath), 
+                DateTime.Now,
 				Path.GetExtension(_filePath),
 				Path.GetDirectoryName(_filePath));
 		}

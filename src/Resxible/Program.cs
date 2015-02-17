@@ -2,6 +2,7 @@
 using System.IO;
 using Com.Apcurium.Resxible.Localization;
 using Com.Apcurium.Resxible.Localization.Android;
+using Com.Apcurium.Resxible.Localization.DotNet;
 using Com.Apcurium.Resxible.Localization.iOS;
 using Mono.Options;
 

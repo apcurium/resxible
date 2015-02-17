@@ -1,4 +1,5 @@
 ﻿using Com.Apcurium.Resxible.Localization;
+using Com.Apcurium.Resxible.Localization.DotNet;
 using NUnit.Framework;
 
 namespace Com.Apcurium.Resxible.Tests

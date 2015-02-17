@@ -4,7 +4,7 @@ using System.IO;
 using System.Resources;
 using System.Text;
 
-namespace Com.Apcurium.Resxible.Localization
+namespace Com.Apcurium.Resxible.Localization.DotNet
 {
 	public class ResxResourceFileHandler : ResourceFileHandlerBase
 	{
