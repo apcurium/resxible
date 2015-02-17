@@ -58,6 +58,7 @@
     <Compile Include="Localization\ResourceManager.cs" />
     <Compile Include="Localization\iOS\iOSResourceFileHandler.cs" />
     <Compile Include="Localization\Android\AndroidResourceFileHandler.cs" />
+    <Compile Include="ResourcesConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

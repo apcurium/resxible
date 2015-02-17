@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle ("amp.tool")]
+[assembly: AssemblyTitle ("Resxible")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyCompany ("Apcurium")]
 [assembly: AssemblyProduct ("")]
