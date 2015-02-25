@@ -5,6 +5,8 @@ resxible is a simple tool to generate automatically **several** platform-depende
 
 ##Overview
 
+We are using resxible in our Xamarin based projects but it's compatible for any cross-platform solutions. From one or several resx files it generates the native files needed to localize your application. We are working on improving the 
+
 ##Installation
 
 ###from the nuget package
@@ -43,5 +45,5 @@ resxible.exe -t=ios -c="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lpro
 
 - Where can I find an eample?
 
-##But... it doesn't support resxible or I found a bug
+##But resxible doesn't support XYZ or I found a bug
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
