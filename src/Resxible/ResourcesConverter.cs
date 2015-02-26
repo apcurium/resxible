@@ -42,6 +42,11 @@ namespace Com.Apcurium.Resxible
 
         private static string GetLanguageSpecificCommonFile(string commonSource, string language)
         {
+            if (string.IsNullOrWhiteSpace(commonSource))
+            {
+                return null;
+            }
+
             if (string.IsNullOrWhiteSpace(language))
             {
                 return commonSource;
