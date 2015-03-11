@@ -41,9 +41,15 @@ resxible.exe -t=ios -c="Common.resx" -m="MyApp.resx" -d="..\..\MyApp.iOS\en.lpro
 
 - Does resxible support several languages? Do I need to specify each language in the command line arguments?
 
+Yes resixble is supporting several languages and you don't need to specify them in the script. By default resxible will look for others files with language suffixes and will generate the platform-specific artefacts accordingly. For example if you have a Master.resx file, resxible will also handle a Master.fr.resx file transparently.
+
 - What's the common file argument for?
 
-- Where can I find an eample?
+To specify a shared resx file between several projects to reuse generic strings. Any key present in your project specific file will override the one from this common source.
+
+- Where can I find an example?
+
+This video: or look into the sample folder in the repository.
 
 ##But resxible doesn't support XYZ or I found a bug
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
