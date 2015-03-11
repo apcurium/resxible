@@ -4,10 +4,14 @@
 		<id>Resxible</id>
 		<version>1.0.0.0</version>
 		<title>Resxible</title>
-		<description>Localization file generator for iOS / Android</description>
+		<description>Localization file generator for your Xamarin iOS / Android</description>
+    <summary>resxible is a simple tool to generate automatically several platform-dependent resource files from a single RESX file.</summary>
 		<authors>Apcurium</authors>
 		<owners>Apcurium</owners>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/apcurium/resxible</projectUrl>
+    <iconUrl>http://www.apcurium.com/wp-content/uploads/2015/03/AGI-32x32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>xamarin ios android i18n localization resx</tags>
 		<dependencies />
 	</metadata>
 	<files>		
