@@ -55,4 +55,4 @@ This video: https://www.youtube.com/watch?v=Fnv5Q4NLKQo or look into the sample 
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
 
 ##Contact
-
+http://www.apcurium.com/contact-us/
