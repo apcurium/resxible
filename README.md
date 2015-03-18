@@ -5,7 +5,7 @@ resxible is a simple tool to generate automatically **several** platform-depende
 
 ##Overview
 
-We are using resxible in our Xamarin based projects but it's compatible for any cross-platform solutions. From one or several resx files it generates the native files needed to localize your application. We are working on improving the 
+We are using resxible in our Xamarin based projects but it's compatible for any cross-platform solutions. From one or several resx files it generates the native files needed to localize your application. We are working on improving the developer experience (aka Visual/Xamarin Studio integrations)
 
 ##Installation
 
@@ -28,7 +28,7 @@ Options:
 - **-t|target** : ios or android (required)
 - **-c|common** : common resx file (optional). If you have a resx file containnning default values for different projects. Those values will be overriden if they exist in the main resx file (see below)
 - **-m|master** : main resx file (required)
-- **-d|destination** : destination path and file name to be genearetd (required)
+- **-d|destination** : destination path and file name to be generaetd (required)
 - **-b|backup** : backup file (optional)
 
 Example:
