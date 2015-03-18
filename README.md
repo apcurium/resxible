@@ -49,7 +49,10 @@ To specify a shared resx file between several projects to reuse generic strings.
 
 - Where can I find an example?
 
-This video: or look into the sample folder in the repository.
+This video: https://www.youtube.com/watch?v=Fnv5Q4NLKQo or look into the sample folder in the repository.
 
 ##But resxible doesn't support XYZ or I found a bug
 Don't hesitate to create an [issue](https://github.com/apcurium/amp-tool/issues) or better, fork it and send us a pull request!
+
+##Contact
+
