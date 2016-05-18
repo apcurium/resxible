@@ -35,5 +35,17 @@ namespace Com.Apcurium.Resxible.Tests.Localization.Platforms
             sut = new AndroidResourceFileHandler(AndroidFileName);
             Assert.That(sut.Keys.Count, Is.EqualTo(4));
         }
+
+        [Test]
+        public void AddValue_Save_FileUpdated_Escaped()
+        {
+            var sut = new AndroidResourceFileHandler(AndroidFileName);
+
+            sut["anotherkey"] = "< > & ¢ £ ¥ € © ®";
+            sut.Save(false);
+
+            sut = new AndroidResourceFileHandler(AndroidFileName);
+            Assert.That(sut.Keys.Count, Is.EqualTo(4));
+        }
     }
 }

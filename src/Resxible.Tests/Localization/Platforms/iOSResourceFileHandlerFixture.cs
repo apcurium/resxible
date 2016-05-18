@@ -35,5 +35,17 @@ namespace Com.Apcurium.Resxible.Tests.Localization.Platforms
             sut = new iOSResourceFileHandler(iOSFileName);
             Assert.That(sut.Keys.Count, Is.EqualTo(3));
         }
+
+        [Test]
+        public void AddValue_Save_FileUpdated_Escaped()
+        {
+            var sut = new iOSResourceFileHandler(iOSFileName);
+
+            sut["anotherkey"] = "< > & ¢ £ ¥ € © ®";
+            sut.Save(false);
+
+            sut = new iOSResourceFileHandler(iOSFileName);
+            Assert.That(sut.Keys.Count, Is.EqualTo(3));
+        }
     }
 }

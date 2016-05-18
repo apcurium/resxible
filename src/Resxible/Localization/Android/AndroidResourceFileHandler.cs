@@ -14,8 +14,9 @@ namespace Com.Apcurium.Resxible.Localization.Android
             {
                 document = XElement.Load(filePath);
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine("Warning: Could not load XML from file {0}. Exception: {1}", filePath, e.Message);
                 document = new XElement ("resources");
             }
 
@@ -25,22 +26,6 @@ namespace Com.Apcurium.Resxible.Localization.Android
 
                 TryAdd(key, Decode(localization.Value));
             }
-        }
-
-        protected virtual string DecodeXml(string text)
-        {
-            //Others invalid characters does not look to be escaped...
-            return text.Replace("&lt;", "<").Replace("&gt;", ">");
-        }
-
-        private string DecodeAndroid(string text)
-        {
-            return text.Replace("\\'", "'");
-        }
-
-        protected string Decode(string text)
-        {
-            return DecodeAndroid(DecodeXml(text));
         }
 
         protected override string GetFileText()
@@ -59,21 +44,25 @@ namespace Com.Apcurium.Resxible.Localization.Android
 
             return stringBuilder.ToString();
         }
-
-        protected virtual string EncodeXml(string text)
+        
+        protected virtual string Encode(string text)
         {
-            //Others invalid characters does not look to be escaped...
-            return text.Replace("<", "&lt;").Replace(">", "&gt;");
+            return EncodeAndroid(EncodeXml(text));
+        }
+
+        protected string Decode(string text)
+        {
+            return DecodeAndroid(DecodeXml(text));
         }
 
         protected virtual string EncodeAndroid(string text)
         {
-            return text.Replace("'", "\\'");
+            return text.Replace("'", "\\'").Replace("\"", "\\\"");
         }
 
-        protected virtual string Encode(string text)
+        private string DecodeAndroid(string text)
         {
-            return EncodeAndroid(EncodeXml(text));
+            return text.Replace("\\'", "'").Replace("\\\"", "\"");
         }
     }
 }
