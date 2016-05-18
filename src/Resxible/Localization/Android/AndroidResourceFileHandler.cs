@@ -38,7 +38,7 @@ namespace Com.Apcurium.Resxible.Localization.Android
             return text.Replace("\\'", "'");
         }
 
-        protected string Decode(string text)
+	    private string Decode(string text)
         {
             return DecodeAndroid(DecodeXml(text));
         }
@@ -49,7 +49,7 @@ namespace Com.Apcurium.Resxible.Localization.Android
 
 			stringBuilder.Append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n");
 
-			//<string name="ApplicationName">TaxiHail</string>
+			//<string name="key">value</string>
 			foreach (var resource in this)
 			{
 				stringBuilder.AppendFormat("  <string name=\"{0}\">{1}</string>\r\n", resource.Key, Encode(resource.Value));

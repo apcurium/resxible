@@ -12,8 +12,8 @@ namespace Com.Apcurium.Resxible.Tests.Localization.Platforms
         [SetUp]
         public void Setup()
         {
-            File.Delete("ResxFileHandlerResourceTestData.Copy.resx");
-            File.Copy("ResxFileHandlerResourceTestData.resx", "ResxFileHandlerResourceTestData.Copy.resx");
+            File.Delete(ResxFileName);
+            File.Copy("ResxFileHandlerResourceTestData.resx", ResxFileName);
         }
 
         [Test]
