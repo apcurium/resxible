@@ -21,7 +21,5 @@ namespace Com.Apcurium.Resxible.Tests
             }
             return _content;
         }
-
-        
     }
 }

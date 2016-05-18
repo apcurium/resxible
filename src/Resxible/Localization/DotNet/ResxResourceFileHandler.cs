@@ -6,26 +6,26 @@ using System.Text;
 
 namespace Com.Apcurium.Resxible.Localization.DotNet
 {
-	public class ResxResourceFileHandler : ResourceFileHandlerBase
-	{
-		public ResxResourceFileHandler(string filePath) : base(filePath)
-		{
-			var resXResourceReader = new ResXResourceReader (filePath) { UseResXDataNodes = true };
+    public class ResxResourceFileHandler : ResourceFileHandlerBase
+    {
+        public ResxResourceFileHandler(string filePath) : base(filePath)
+        {
+            var resXResourceReader = new ResXResourceReader (filePath) { UseResXDataNodes = true };
 
-			foreach (DictionaryEntry de in resXResourceReader)
-			{
-				var node = (ResXDataNode)de.Value;
+            foreach (DictionaryEntry de in resXResourceReader)
+            {
+                var node = (ResXDataNode)de.Value;
 
-				//FileRef is null if it's not a file reference
-				if (node.FileRef == null)
-				{
-					TryAdd (node.Name, node.GetValue ((ITypeResolutionService)null).ToString ());
-				}
-			}
-		}
+                //FileRef is null if it's not a file reference
+                if (node.FileRef == null)
+                {
+                    TryAdd (node.Name, node.GetValue ((ITypeResolutionService)null).ToString ());
+                }
+            }
+        }
 
-		protected override string GetFileText ()
-		{
+        protected override string GetFileText ()
+        {
             using(var stream = new MemoryStream())
             using(var writer = new ResXResourceWriter(stream))
             {
@@ -41,7 +41,7 @@ namespace Com.Apcurium.Resxible.Localization.DotNet
                     return reader.ReadToEnd();
                 }
             }
-		}
-	}
+        }
+    }
 }
 

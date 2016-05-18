@@ -17,7 +17,7 @@ namespace Sample.iPhone
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-			
+            
             lblHome.Text = NSBundle.MainBundle.LocalizedString("HelloWorld", null);
             btHome.SetTitle(NSBundle.MainBundle.LocalizedString("Save", null), UIControlState.Normal);
         }

@@ -89,8 +89,7 @@ namespace Com.Apcurium.Resxible.Tests.Localization
 
             Assert.IsNull(backup);
         }
-
-
+        
         [Test]
         public void Add_KeyValues_SortedByKeys()
         {
@@ -101,7 +100,5 @@ namespace Com.Apcurium.Resxible.Tests.Localization
            
             Assert.That(sut.ToArray()[0].Key, Is.EqualTo("a"));
         }
-
-
     }
 }
