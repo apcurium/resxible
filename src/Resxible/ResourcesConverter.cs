@@ -9,7 +9,7 @@ namespace Com.Apcurium.Resxible
 {
     static class ResourcesConverter
     {
-        public static void Generate(string source, string commonSource, string destination, string target, bool backup)
+        public static void Generate(string source, string commonSource, string destination, string target, bool backup, bool clearDestination)
         {
             var masterResxFile = new FileInfo(source);
             if (masterResxFile.Directory != null)
@@ -22,7 +22,7 @@ namespace Com.Apcurium.Resxible
                     var commonFile = GetLanguageSpecificCommonFile(commonSource, language);
                     var languageSpecificDestinationFolder = GetLanguageSpecificDestinationFolder(destination, language, target);
 
-                    ConvertResourceFile(commonFile, localizedResourceFile.FullName, target, languageSpecificDestinationFolder, backup);
+                    ConvertResourceFile(commonFile, localizedResourceFile.FullName, target, languageSpecificDestinationFolder, backup, clearDestination);
                 }
             }
         }
@@ -83,7 +83,7 @@ namespace Com.Apcurium.Resxible
             }
         }
 
-        private static void ConvertResourceFile(string commonFile, string masterFile, string target, string destination, bool backup)
+        private static void ConvertResourceFile(string commonFile, string masterFile, string target, string destination, bool backup, bool clearDestination)
         {
             var resourceManager = new ResourceManager();
             ResourceFileHandlerBase handler;
@@ -98,10 +98,10 @@ namespace Com.Apcurium.Resxible
             switch (target)
             {
                 case "android":
-                    resourceManager.AddDestination(handler = new AndroidResourceFileHandler(destination));
+                    resourceManager.AddDestination(handler = new AndroidResourceFileHandler(destination, clearDestination));
                     break;
                 case "ios":
-                    resourceManager.AddDestination(handler = new iOSResourceFileHandler(destination));
+                    resourceManager.AddDestination(handler = new iOSResourceFileHandler(destination, clearDestination));
                     break;
                 default:
                     throw new InvalidOperationException("Invalid program arguments");

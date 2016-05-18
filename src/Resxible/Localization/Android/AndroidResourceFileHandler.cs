@@ -7,8 +7,13 @@ namespace Com.Apcurium.Resxible.Localization.Android
 {
 	public class AndroidResourceFileHandler : ResourceFileHandlerBase
 	{
-		public AndroidResourceFileHandler(string filePath) : base(filePath)
+		public AndroidResourceFileHandler(string filePath, bool skipCurrentContent) : base(filePath)
 		{
+		    if (skipCurrentContent)
+		    {
+		        return;
+		    }
+
 			XElement document;
 			try
 			{
