@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="HelloWorld">Bonjour le Monde!</string>
-  <string name="Save">Sauver</string>
   <string name="OldKey">VieilleValeur</string>
+  <string name="Save">Sauver</string>
 </resources>

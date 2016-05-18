@@ -2,6 +2,6 @@
 <resources>
   <string name="ApplicationName">Sample Android</string>
   <string name="HelloWorld">Hello World!</string>
-  <string name="Save">Save</string>
   <string name="OldKey">OldValue</string>
+  <string name="Save">Save</string>
 </resources>
