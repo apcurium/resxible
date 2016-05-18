@@ -13,7 +13,6 @@ namespace Com.Apcurium.Resxible.Tests.Localization
         public void PrepareSourceAndDestination()
         {
             _sut = new ResourceManager();
-
         }
 
         [Test]
