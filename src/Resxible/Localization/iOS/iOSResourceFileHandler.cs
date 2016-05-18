@@ -46,22 +46,12 @@ namespace Com.Apcurium.Resxible.Localization.iOS
 
         protected virtual string Encode(string text)
         {
-            return EncodeiOS(text);
+            return EscapeQuotes(text);
         }
 
         protected virtual string Decode(string text)
         {
-            return DecodeiOS(text);
-        }
-
-        protected virtual string EncodeiOS(string text)
-        {
-            return text.Replace("'", "\\'").Replace("\"", "\\\"");
-        }
-
-        private string DecodeiOS(string text)
-        {
-            return text.Replace("\\'", "'").Replace("\\\"", "\"");
+            return UnescapeQuotes(text);
         }
     }
 }

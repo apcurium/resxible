@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
@@ -7,6 +8,13 @@ namespace Com.Apcurium.Resxible.Localization.Android
 {
     public class AndroidResourceFileHandler : ResourceFileHandlerBase
     {
+        private readonly IList<HtmlEntity> _htmlEntities = new List<HtmlEntity>
+        {
+            new HtmlEntity {Normal = "&", Encoded = "&amp;"},
+            new HtmlEntity {Normal = "<", Encoded = "&lt;"},
+            new HtmlEntity {Normal = ">", Encoded = "&gt;"}
+        };
+
         public AndroidResourceFileHandler(string filePath) : base(filePath)
         {
             XElement document;
@@ -47,22 +55,33 @@ namespace Com.Apcurium.Resxible.Localization.Android
         
         protected virtual string Encode(string text)
         {
-            return EncodeAndroid(EncodeXml(text));
+            return EscapeQuotes(EncodeXml(text));
         }
 
         protected string Decode(string text)
         {
-            return DecodeAndroid(DecodeXml(text));
+            return UnescapeQuotes(DecodeXml(text));
         }
 
-        protected virtual string EncodeAndroid(string text)
+        protected string DecodeXml(string text)
         {
-            return text.Replace("'", "\\'").Replace("\"", "\\\"");
+            //Others invalid characters does not look to be escaped...
+            foreach (var htmlEntity in _htmlEntities)
+            {
+                text = text.Replace(htmlEntity.Encoded, htmlEntity.Normal);
+            }
+
+            return text;
         }
 
-        private string DecodeAndroid(string text)
+        protected string EncodeXml(string text)
         {
-            return text.Replace("\\'", "'").Replace("\\\"", "\"");
+            foreach (var htmlEntity in _htmlEntities)
+            {
+                text = text.Replace(htmlEntity.Normal, htmlEntity.Encoded);
+            }
+
+            return text;
         }
     }
 }
