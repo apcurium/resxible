@@ -6,80 +6,80 @@ using System.Linq;
 
 namespace Com.Apcurium.Resxible.Localization
 {
-	//Working with .resx Files Programmatically http://msdn.microsoft.com/en-us/library/gg418542.aspx
-	public abstract class ResourceFileHandlerBase : SortedDictionary<string, string>
-	{
-		private readonly string _filePath;
-		private readonly HashSet<string> _duplicateKeys;
+    //Working with .resx Files Programmatically http://msdn.microsoft.com/en-us/library/gg418542.aspx
+    public abstract class ResourceFileHandlerBase : SortedDictionary<string, string>
+    {
+        private readonly string _filePath;
+        private readonly HashSet<string> _duplicateKeys;
 
-		protected ResourceFileHandlerBase(string filePath) : base(StringComparer.OrdinalIgnoreCase)
-		{
-			_duplicateKeys = new HashSet<string>();
-			_filePath = filePath;
-			CreateFileIfMissing ();
-		}
+        protected ResourceFileHandlerBase(string filePath) : base(StringComparer.OrdinalIgnoreCase)
+        {
+            _duplicateKeys = new HashSet<string>();
+            _filePath = filePath;
+            CreateFileIfMissing ();
+        }
 
-		private void CreateFileIfMissing()
-		{
-			var file = new FileInfo (_filePath);
+        private void CreateFileIfMissing()
+        {
+            var file = new FileInfo (_filePath);
 
-		    if (file.Directory != null
+            if (file.Directory != null
                 && !file.Directory.Exists)
-		    {
+            {
                 Directory.CreateDirectory(file.Directory.FullName);
-		    }
+            }
 
-			if (!file.Exists)
-			{
-				file.Create().Dispose();
-			}
-		}
+            if (!file.Exists)
+            {
+                file.Create().Dispose();
+            }
+        }
 
-		public virtual string Name
-		{
-			get { return Path.GetFileName(_filePath); }
-		}
+        public virtual string Name
+        {
+            get { return Path.GetFileName(_filePath); }
+        }
 
-		protected void TryAdd(string key, string value)
-		{
-			if (ContainsKey(key))
-			{
-				_duplicateKeys.Add(key);
-			}
-			else
-			{
-				Add(key, value);
-			}
-		}
+        protected void TryAdd(string key, string value)
+        {
+            if (ContainsKey(key))
+            {
+                _duplicateKeys.Add(key);
+            }
+            else
+            {
+                Add(key, value);
+            }
+        }
 
-		public string Save(bool backupOldFile = true)
-		{
-			string backupFilePath = null;
+        public string Save(bool backupOldFile = true)
+        {
+            string backupFilePath = null;
 
-			if (backupOldFile)
-			{
+            if (backupOldFile)
+            {
                 backupFilePath = GetBackupFilePath();
 
                 File.Copy(_filePath, backupFilePath);
-			}
+            }
 
-			File.WriteAllText(_filePath, GetFileText());
+            File.WriteAllText(_filePath, GetFileText());
 
-			return backupFilePath;
-		}
+            return backupFilePath;
+        }
 
-		protected abstract string GetFileText();
+        protected abstract string GetFileText();
 
-	    private string GetBackupFilePath()
-		{
+        private string GetBackupFilePath()
+        {
             return string.Format("{3}\\{0}-{1:yyyy-MM-dd_hh-mm-ss-FFFFFF}{2}",
-				Path.GetFileNameWithoutExtension(_filePath), 
+                Path.GetFileNameWithoutExtension(_filePath), 
                 DateTime.Now,
-				Path.GetExtension(_filePath),
-				Path.GetDirectoryName(_filePath));
-		}
+                Path.GetExtension(_filePath),
+                Path.GetDirectoryName(_filePath));
+        }
 
-		public ReadOnlyCollection<string> DuplicateKeys { get { return _duplicateKeys.ToList().AsReadOnly(); } }
-	}
+        public ReadOnlyCollection<string> DuplicateKeys { get { return _duplicateKeys.ToList().AsReadOnly(); } }
+    }
 }
 
