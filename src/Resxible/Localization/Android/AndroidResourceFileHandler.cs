@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
@@ -7,6 +8,13 @@ namespace Com.Apcurium.Resxible.Localization.Android
 {
     public class AndroidResourceFileHandler : ResourceFileHandlerBase
     {
+        private readonly IList<HtmlEntity> _htmlEntities = new List<HtmlEntity>
+        {
+            new HtmlEntity {Normal = "&", Encoded = "&amp;"},
+            new HtmlEntity {Normal = "<", Encoded = "&lt;"},
+            new HtmlEntity {Normal = ">", Encoded = "&gt;"}
+        };
+
         public AndroidResourceFileHandler(string filePath, bool overwriteContent) : base(filePath)
         {
             if (overwriteContent)
@@ -19,8 +27,9 @@ namespace Com.Apcurium.Resxible.Localization.Android
             {
                 document = XElement.Load(filePath);
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine("Warning: Could not load XML from file {0}. Exception: {1}", filePath, e.Message);
                 document = new XElement ("resources");
             }
 
@@ -30,22 +39,6 @@ namespace Com.Apcurium.Resxible.Localization.Android
 
                 TryAdd(key, Decode(localization.Value));
             }
-        }
-
-        protected virtual string DecodeXml(string text)
-        {
-            //Others invalid characters does not look to be escaped...
-            return text.Replace("&lt;", "<").Replace("&gt;", ">");
-        }
-
-        private string DecodeAndroid(string text)
-        {
-            return text.Replace("\\'", "'");
-        }
-
-	    private string Decode(string text)
-        {
-            return DecodeAndroid(DecodeXml(text));
         }
 
         protected override string GetFileText()
@@ -64,21 +57,36 @@ namespace Com.Apcurium.Resxible.Localization.Android
 
             return stringBuilder.ToString();
         }
-
-        protected virtual string EncodeXml(string text)
-        {
-            //Others invalid characters does not look to be escaped...
-            return text.Replace("<", "&lt;").Replace(">", "&gt;");
-        }
-
-        protected virtual string EncodeAndroid(string text)
-        {
-            return text.Replace("'", "\\'");
-        }
-
+        
         protected virtual string Encode(string text)
         {
-            return EncodeAndroid(EncodeXml(text));
+            return EscapeQuotes(EncodeXml(text));
+        }
+
+        protected string Decode(string text)
+        {
+            return UnescapeQuotes(DecodeXml(text));
+        }
+
+        protected string DecodeXml(string text)
+        {
+            //Others invalid characters does not look to be escaped...
+            foreach (var htmlEntity in _htmlEntities)
+            {
+                text = text.Replace(htmlEntity.Encoded, htmlEntity.Normal);
+            }
+
+            return text;
+        }
+
+        protected string EncodeXml(string text)
+        {
+            foreach (var htmlEntity in _htmlEntities)
+            {
+                text = text.Replace(htmlEntity.Normal, htmlEntity.Encoded);
+            }
+
+            return text;
         }
     }
 }

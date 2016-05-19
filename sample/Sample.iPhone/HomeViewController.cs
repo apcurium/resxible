@@ -1,8 +1,4 @@
-﻿
-using System;
-using System.Drawing;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
 
 namespace Sample.iPhone
@@ -17,8 +13,9 @@ namespace Sample.iPhone
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
+
             lblHome.Text = NSBundle.MainBundle.LocalizedString("HelloWorld", null);
+            lblEscape.Text = NSBundle.MainBundle.LocalizedString("EscapeTest", null);
             btHome.SetTitle(NSBundle.MainBundle.LocalizedString("Save", null), UIControlState.Normal);
         }
     }

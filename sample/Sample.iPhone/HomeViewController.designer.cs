@@ -1,6 +1,6 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
+// This file has been generated automatically by Xamarin Studio Community to store outlets and
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
@@ -16,6 +16,9 @@ namespace Sample.iPhone
 		UIKit.UIButton btHome { get; set; }
 
 		[Outlet]
+		UIKit.UILabel lblEscape { get; set; }
+
+		[Outlet]
 		UIKit.UILabel lblHome { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -28,6 +31,11 @@ namespace Sample.iPhone
 			if (lblHome != null) {
 				lblHome.Dispose ();
 				lblHome = null;
+			}
+
+			if (lblEscape != null) {
+				lblEscape.Dispose ();
+				lblEscape = null;
 			}
 		}
 	}

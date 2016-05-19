@@ -11,7 +11,7 @@ namespace Com.Apcurium.Resxible.Localization
     {
         private readonly string _filePath;
         private readonly HashSet<string> _duplicateKeys;
-
+        
         protected ResourceFileHandlerBase(string filePath) : base(StringComparer.OrdinalIgnoreCase)
         {
             _duplicateKeys = new HashSet<string>();
@@ -19,27 +19,11 @@ namespace Com.Apcurium.Resxible.Localization
             CreateFileIfMissing ();
         }
 
-        private void CreateFileIfMissing()
-        {
-            var file = new FileInfo (_filePath);
-
-            if (file.Directory != null
-                && !file.Directory.Exists)
-            {
-                Directory.CreateDirectory(file.Directory.FullName);
-            }
-
-            if (!file.Exists)
-            {
-                file.Create().Dispose();
-            }
-        }
-
         public virtual string Name
         {
             get { return Path.GetFileName(_filePath); }
         }
-
+        
         protected void TryAdd(string key, string value)
         {
             if (ContainsKey(key))
@@ -68,6 +52,16 @@ namespace Com.Apcurium.Resxible.Localization
             return backupFilePath;
         }
 
+        protected string EscapeQuotes(string text)
+        {
+            return text.Replace("'", "\\'").Replace("\"", "\\\"");
+        }
+
+        protected string UnescapeQuotes(string text)
+        {
+            return text.Replace("\\'", "'").Replace("\\\"", "\"");
+        }
+
         protected abstract string GetFileText();
 
         private string GetBackupFilePath()
@@ -77,6 +71,22 @@ namespace Com.Apcurium.Resxible.Localization
                 DateTime.Now,
                 Path.GetExtension(_filePath),
                 Path.GetDirectoryName(_filePath));
+        }
+
+        private void CreateFileIfMissing()
+        {
+            var file = new FileInfo(_filePath);
+
+            if (file.Directory != null
+                && !file.Directory.Exists)
+            {
+                Directory.CreateDirectory(file.Directory.FullName);
+            }
+
+            if (!file.Exists)
+            {
+                file.Create().Dispose();
+            }
         }
 
         public ReadOnlyCollection<string> DuplicateKeys { get { return _duplicateKeys.ToList().AsReadOnly(); } }

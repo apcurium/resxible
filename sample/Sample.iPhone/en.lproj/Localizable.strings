@@ -1,3 +1,4 @@
+"EscapeTest"="< > & ¢ £ ¥ € © ® \"Test\" \'SingleQuote\'";
 "HelloWorld"="Hello World!";
 "OldKey"="OldValue";
 "Save"="Save";

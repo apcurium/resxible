@@ -35,18 +35,7 @@ namespace Com.Apcurium.Resxible.Localization.iOS
                 }
             }
         }
-
-        private string Decode(string text)
-        {
-            return DecodeXml(text);
-        }
-
-        protected virtual string DecodeXml(string text)
-        {
-            //Others invalid characters does not look to be escaped...
-            return text.Replace("&lt;", "<").Replace("&gt;", ">");
-        }
-
+        
         protected override string GetFileText()
         {
             var stringBuilder = new StringBuilder();
@@ -60,15 +49,14 @@ namespace Com.Apcurium.Resxible.Localization.iOS
             return stringBuilder.ToString();
         }
 
-        protected virtual string EncodeXml(string text)
-        {
-            //Others invalid characters does not look to be escaped...
-            return text.Replace("<", "&lt;").Replace(">", "&gt;");
-        }
-
         protected virtual string Encode(string text)
         {
-            return EncodeXml(text);
+            return EscapeQuotes(text);
+        }
+
+        protected virtual string Decode(string text)
+        {
+            return UnescapeQuotes(text);
         }
     }
 }

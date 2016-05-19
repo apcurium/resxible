@@ -9,6 +9,12 @@
         android:layout_height="wrap_content"
         style="@android:style/TextAppearance.Large"
         android:gravity="center" />
+    <TextView
+        android:text="@string/EscapeTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:style/TextAppearance.Large"
+        android:gravity="center" />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
