@@ -7,9 +7,9 @@ namespace Com.Apcurium.Resxible.Localization.iOS
 {
     public class iOSResourceFileHandler : ResourceFileHandlerBase
     {
-        public iOSResourceFileHandler(string filePath, bool skipCurrentContent) : base(filePath)
+        public iOSResourceFileHandler(string filePath, bool overwriteContent) : base(filePath)
         {
-            if (skipCurrentContent)
+            if (overwriteContent)
             {
                 return;
             }
