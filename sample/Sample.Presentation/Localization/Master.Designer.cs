@@ -62,11 +62,11 @@ namespace Sample.Presentation.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt; &gt; &amp; ¢ £ ¥ € © ®.
+        ///   Looks up a localized string similar to &lt; &gt; &amp; ¢ £ ¥ € © ® &quot;Test&quot; &apos;SingleQuote&apos;.
         /// </summary>
-        internal static string EncryptionTest {
+        internal static string EscapeTest {
             get {
-                return ResourceManager.GetString("EncryptionTest", resourceCulture);
+                return ResourceManager.GetString("EscapeTest", resourceCulture);
             }
         }
         

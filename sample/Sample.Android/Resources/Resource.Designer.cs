@@ -80,13 +80,16 @@ namespace Sample.Android
 			public const int ApplicationName = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int EncryptionTest = 2130968577;
+			public const int EscapeTest = 2130968577;
 			
 			// aapt resource value: 0x7f040002
 			public const int HelloWorld = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int Save = 2130968579;
+			public const int OldKey = 2130968579;
+			
+			// aapt resource value: 0x7f040004
+			public const int Save = 2130968580;
 			
 			static String()
 			{

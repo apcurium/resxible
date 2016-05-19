@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="ApplicationName">Sample Android</string>
-  <string name="EncryptionTest">&lt; &gt; &amp; ¢ £ ¥ € © ® \"Test\" \'Encrypt\'</string>
+  <string name="EscapeTest">&lt; &gt; &amp; ¢ £ ¥ € © ® \"Test\" \'SingleQuote\'</string>
   <string name="HelloWorld">Hello World!</string>
   <string name="OldKey">OldValue</string>
   <string name="Save">Save</string>

@@ -15,7 +15,7 @@ namespace Sample.iPhone
             base.ViewDidLoad();
 
             lblHome.Text = NSBundle.MainBundle.LocalizedString("HelloWorld", null);
-            lblEncrypt.Text = NSBundle.MainBundle.LocalizedString("EncryptionTest", null);
+            lblEscape.Text = NSBundle.MainBundle.LocalizedString("EscapeTest", null);
             btHome.SetTitle(NSBundle.MainBundle.LocalizedString("Save", null), UIControlState.Normal);
         }
     }

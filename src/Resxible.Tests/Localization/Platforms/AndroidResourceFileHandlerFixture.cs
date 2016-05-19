@@ -51,12 +51,12 @@ namespace Com.Apcurium.Resxible.Tests.Localization.Platforms
         [Test]
         public void AddValue_Save_FileUpdated_Escaped()
         {
-            var sut = new AndroidResourceFileHandler(AndroidFileName);
+            var sut = new AndroidResourceFileHandler(AndroidFileName, false);
 
             sut["anotherkey"] = "< > & ¢ £ ¥ € © ®";
             sut.Save(false);
 
-            sut = new AndroidResourceFileHandler(AndroidFileName);
+            sut = new AndroidResourceFileHandler(AndroidFileName, false);
             Assert.That(sut.Keys.Count, Is.EqualTo(4));
         }
     }

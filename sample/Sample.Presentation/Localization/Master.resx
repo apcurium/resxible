@@ -120,7 +120,7 @@
   <data name="HelloWorld" xml:space="preserve">
     <value>Hello World!</value>
   </data>
-  <data name="EncryptionTest" xml:space="preserve">
-    <value>&lt; &gt; &amp; ¢ £ ¥ € © ® "Test" 'Encrypt'</value>
+  <data name="EscapeTest" xml:space="preserve">
+    <value>&lt; &gt; &amp; ¢ £ ¥ € © ® "Test" 'SingleQuote'</value>
   </data>
 </root>

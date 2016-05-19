@@ -16,7 +16,7 @@ namespace Sample.iPhone
 		UIKit.UIButton btHome { get; set; }
 
 		[Outlet]
-		UIKit.UILabel lblEncrypt { get; set; }
+		UIKit.UILabel lblEscape { get; set; }
 
 		[Outlet]
 		UIKit.UILabel lblHome { get; set; }
@@ -33,9 +33,9 @@ namespace Sample.iPhone
 				lblHome = null;
 			}
 
-			if (lblEncrypt != null) {
-				lblEncrypt.Dispose ();
-				lblEncrypt = null;
+			if (lblEscape != null) {
+				lblEscape.Dispose ();
+				lblEscape = null;
 			}
 		}
 	}

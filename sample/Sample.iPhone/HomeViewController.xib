@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
                 <outlet property="btHome" destination="FbY-uq-K9R" id="xax-8e-XBA"/>
-                <outlet property="lblEncrypt" destination="Jbf-YI-Aah" id="Sst-Dy-Ha3"/>
+                <outlet property="lblEscape" destination="Jbf-YI-Aah" id="Sst-Dy-Ha3"/>
                 <outlet property="lblHome" destination="QcJ-s7-gK5" id="ryJ-Rn-Mbh"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kCW-yf-GMq"/>
             </connections>
