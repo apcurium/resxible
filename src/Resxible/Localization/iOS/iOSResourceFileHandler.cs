@@ -7,8 +7,13 @@ namespace Com.Apcurium.Resxible.Localization.iOS
 {
     public class iOSResourceFileHandler : ResourceFileHandlerBase
     {
-        public iOSResourceFileHandler(string filePath) : base(filePath)
+        public iOSResourceFileHandler(string filePath, bool overwriteContent) : base(filePath)
         {
+            if (overwriteContent)
+            {
+                return;
+            }
+
             var lines = File.ReadAllLines(filePath);
 
             foreach (var line in lines)

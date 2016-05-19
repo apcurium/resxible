@@ -12,14 +12,16 @@ namespace Com.Apcurium.Resxible
             var commonSource = string.Empty;
             var destination = string.Empty;
             var backup = false;
+            var clearDestination = false;
 
             var p = new OptionSet
             {
                 {"t|target=", "Target application: ios or android", t => target = t.ToLowerInvariant()},
-                {"c|common=", "Common .resx file path", a => commonSource = a},
+                {"c|common=", "Common .resx file path", c => commonSource = c},
                 {"m|master=", "Master .resx file path", m => source = m},
                 {"d|destination=", "Destination file path", d => destination = d},
-                {"b|backup", "Backup file", b => backup = b != null}
+                {"b|backup", "Backup file", b => backup = b != null},
+                {"clear", "Clear destination files", c => clearDestination = c != null}
             };
 
             try
@@ -33,7 +35,7 @@ namespace Com.Apcurium.Resxible
 
             try
             {
-                ResourcesConverter.Generate(source, commonSource, destination, target, backup);
+                ResourcesConverter.Generate(source, commonSource, destination, target, backup, clearDestination);
 
                 Console.WriteLine("Localization tool ran successfully.");
             }

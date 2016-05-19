@@ -15,8 +15,13 @@ namespace Com.Apcurium.Resxible.Localization.Android
             new HtmlEntity {Normal = ">", Encoded = "&gt;"}
         };
 
-        public AndroidResourceFileHandler(string filePath) : base(filePath)
+        public AndroidResourceFileHandler(string filePath, bool overwriteContent) : base(filePath)
         {
+            if (overwriteContent)
+            {
+                return;
+            }
+
             XElement document;
             try
             {
@@ -42,7 +47,7 @@ namespace Com.Apcurium.Resxible.Localization.Android
 
             stringBuilder.Append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n");
 
-            //<string name="ApplicationName">TaxiHail</string>
+            //<string name="key">value</string>
             foreach (var resource in this)
             {
                 stringBuilder.AppendFormat("  <string name=\"{0}\">{1}</string>\r\n", resource.Key, Encode(resource.Value));

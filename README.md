@@ -21,15 +21,16 @@ We are using resxible in our Xamarin based projects but it's compatible for any 
 
 ##Usage
 
-XYZ.exe [-t] [-a] [-m] [-d] [-b]
+resxible.exe [-t] [-c] [-m] [-d] [-b] [-clear]
 
 Options: 
 
 - **-t|target** : ios or android (required)
-- **-c|common** : common resx file (optional). If you have a resx file containnning default values for different projects. Those values will be overriden if they exist in the main resx file (see below)
+- **-c|common** : common resx file (optional). If you have a resx file containing default values for different projects. These values will be overriden if they exist in the main resx file (see below)
 - **-m|master** : main resx file (required)
-- **-d|destination** : destination path and file name to be generaetd (required)
+- **-d|destination** : destination path and file name to be generated (required)
 - **-b|backup** : backup file (optional)
+- **-clear** : clears destination files (optional).  Removes the content of the platform specific files before adding the generated values.
 
 Example:
 ```Batchfile

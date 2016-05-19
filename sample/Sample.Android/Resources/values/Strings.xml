@@ -3,5 +3,6 @@
   <string name="ApplicationName">Sample Android</string>
   <string name="EncryptionTest">&lt; &gt; &amp; ¢ £ ¥ € © ® \"Test\" \'Encrypt\'</string>
   <string name="HelloWorld">Hello World!</string>
+  <string name="OldKey">OldValue</string>
   <string name="Save">Save</string>
 </resources>
