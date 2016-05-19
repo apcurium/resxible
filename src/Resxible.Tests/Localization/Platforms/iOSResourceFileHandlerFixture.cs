@@ -19,7 +19,7 @@ namespace Com.Apcurium.Resxible.Tests.Localization.Platforms
         [Test]
         public void Ctor_WithFile_CorrectlyInitialized()
         {
-            var sut = new iOSResourceFileHandler(iOSFileName);
+            var sut = new iOSResourceFileHandler(iOSFileName, false);
 
             Assert.That(sut.Keys.Count, Is.EqualTo(2));
         }
@@ -27,13 +27,25 @@ namespace Com.Apcurium.Resxible.Tests.Localization.Platforms
         [Test]
         public void AddValue_Save_FileUpdated()
         {
-            var sut = new iOSResourceFileHandler(iOSFileName);
+            var sut = new iOSResourceFileHandler(iOSFileName, false);
 
             sut["anotherkey"] = "test";
             sut.Save(false);
 
-            sut = new iOSResourceFileHandler(iOSFileName);
+            sut = new iOSResourceFileHandler(iOSFileName, false);
             Assert.That(sut.Keys.Count, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void AddValue_WithClearOption_Save_FileUpdated()
+        {
+            var sut = new iOSResourceFileHandler(iOSFileName, true);
+
+            sut["anotherkey"] = "test";
+            sut.Save(false);
+
+            sut = new iOSResourceFileHandler(iOSFileName, false);
+            Assert.That(sut.Keys.Count, Is.EqualTo(1));
         }
     }
 }

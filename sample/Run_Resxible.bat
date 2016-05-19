@@ -1,0 +1,2 @@
+Resxible.exe -t=android -c="Sample.Presentation\Localization\Common.resx" -m="Sample.Presentation\Localization\Master.resx" -d="Sample.Android\Resources\Values\Strings.xml"
+Resxible.exe -t=ios -c="Sample.Presentation\Localization\Common.resx" -m="Sample.Presentation\Localization\Master.resx" -d="Sample.iPhone\en.lproj\Localizable.strings"
