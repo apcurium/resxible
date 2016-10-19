@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
@@ -23,14 +24,22 @@ namespace Com.Apcurium.Resxible.Localization.Android
             }
 
             XElement document;
-            try
+
+            if(string.IsNullOrEmpty(File.ReadAllText(filePath)))
             {
-                document = XElement.Load(filePath);
+                document = new XElement("resources");
             }
-            catch(Exception e)
+            else
             {
-                Console.WriteLine("Warning: Could not load XML from file {0}. Exception: {1}", filePath, e.Message);
-                document = new XElement ("resources");
+                try
+                {
+                    document = XElement.Load(filePath);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Warning: Could not load XML from file [{0}]. Exception: [{1}]", filePath, e.Message);
+                    document = new XElement("resources");
+                }
             }
 
             foreach (var localization in document.Elements().Where(e => e.Name.ToString().Equals("string", StringComparison.OrdinalIgnoreCase)))
