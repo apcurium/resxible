@@ -37,12 +37,11 @@ namespace Com.Apcurium.Resxible
             {
                 ResourcesConverter.Generate(source, commonSource, destination, target, backup, clearDestination);
 
-                Console.WriteLine("Localization tool ran successfully.");
+                Console.WriteLine("Info: Localization tool ran successfully.");
             }
             catch (Exception exception)
             {
-                Console.Write("error: ");
-                Console.WriteLine(exception.ToString());
+                Console.WriteLine($"Error: [{exception}]");
             }
         }
 
