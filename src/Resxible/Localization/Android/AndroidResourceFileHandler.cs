@@ -37,7 +37,7 @@ namespace Com.Apcurium.Resxible.Localization.Android
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Warning: Could not load XML from file [{0}]. Exception: [{1}]", filePath, e.Message);
+                    Console.WriteLine($"Warning: Could not load XML from file [{filePath}]. Exception: [{e.Message}]");
                     document = new XElement("resources");
                 }
             }

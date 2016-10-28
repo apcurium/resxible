@@ -41,7 +41,7 @@ namespace Com.Apcurium.Resxible
             }
             catch (Exception exception)
             {
-                Console.WriteLine("Error: [{0}]",exception.ToString());
+                Console.WriteLine($"Error: [{exception}]");
             }
         }
 

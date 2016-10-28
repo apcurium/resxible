@@ -86,7 +86,7 @@ namespace Com.Apcurium.Resxible.Localization
             if (!file.Exists)
             {
                 file.Create().Dispose();
-                Console.WriteLine("Info: File [{0}] does not exist. It will be created", _filePath);
+                Console.WriteLine($"Info: File [{_filePath}] does not exist. It will be created");
             }
         }
 
