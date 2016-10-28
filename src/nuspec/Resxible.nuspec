@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Resxible</id>
-		<version>1.1.0.0</version>
+		<version>1.2.0.0</version>
 		<title>Resxible</title>
 		<description>Localization file generator for your Xamarin iOS / Android</description>
     <summary>resxible is a simple tool to generate automatically several platform-dependent resource files from a single RESX file.</summary>
