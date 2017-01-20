@@ -11,7 +11,7 @@ namespace Com.Apcurium.Resxible.Localization
     {
         private readonly string _filePath;
         private readonly HashSet<string> _duplicateKeys;
-        
+
         protected ResourceFileHandlerBase(string filePath) : base(StringComparer.OrdinalIgnoreCase)
         {
             _duplicateKeys = new HashSet<string>();
@@ -23,7 +23,7 @@ namespace Com.Apcurium.Resxible.Localization
         {
             get { return Path.GetFileName(_filePath); }
         }
-        
+
         protected void TryAdd(string key, string value)
         {
             if (ContainsKey(key))
@@ -47,7 +47,17 @@ namespace Com.Apcurium.Resxible.Localization
                 File.Copy(_filePath, backupFilePath);
             }
 
-            File.WriteAllText(_filePath, GetFileText());
+            string newContents = GetFileText();
+            string originalFileContents = File.ReadAllText(_filePath);
+
+            if (!string.Equals(originalFileContents, newContents, StringComparison.InvariantCulture))
+            {
+                File.WriteAllText(_filePath, newContents);
+            }
+            else
+            {
+                Console.WriteLine($"Skipping update of {_filePath}, result the same as before.");
+            }
 
             return backupFilePath;
         }
@@ -67,7 +77,7 @@ namespace Com.Apcurium.Resxible.Localization
         private string GetBackupFilePath()
         {
             return string.Format("{3}\\{0}-{1:yyyy-MM-dd_hh-mm-ss-FFFFFF}{2}",
-                Path.GetFileNameWithoutExtension(_filePath), 
+                Path.GetFileNameWithoutExtension(_filePath),
                 DateTime.Now,
                 Path.GetExtension(_filePath),
                 Path.GetDirectoryName(_filePath));
